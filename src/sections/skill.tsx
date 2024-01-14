@@ -19,6 +19,7 @@ import protopie from '../assets/protopie.svg';
 import SkillCard from '../components/skill-card';
 import { Skill } from '../types/skill';
 import Accordion from '../components/accordion';
+import skillRun from '../assets/video-mobile720.mp4';
 
 const skills: Skill[] = [
   {
@@ -108,7 +109,13 @@ const data = [
       text: 'Design Mastery',
       image: designMastery,
     },
-    contents: ['Product Design', 'UX/UI Design', 'Responsive Design', 'Cross-Platform Design', 'Pixel Precision'],
+    contents: [
+      'Product Design',
+      'UX/UI Design',
+      'Responsive Design',
+      'Cross-Platform Design',
+      'Pixel Precision',
+    ],
   },
   {
     title: {
@@ -122,21 +129,34 @@ const data = [
       text: 'Digital Alchemy',
       image: digitalAlchemy,
     },
-    contents: ['Motion Design', 'Animation', 'Multimedia Creation', 'Graphic Design'],
+    contents: [
+      'Motion Design',
+      'Animation',
+      'Multimedia Creation',
+      'Graphic Design',
+    ],
   },
   {
     title: {
       text: 'Strategic Tech Insights',
       image: strategicTechInsights,
     },
-    contents: ['Business Analysis (IT)', 'IT Strategy', 'Technology Consulting'],
+    contents: [
+      'Business Analysis (IT)',
+      'IT Strategy',
+      'Technology Consulting',
+    ],
   },
   {
     title: {
       text: 'Tech Artistry',
       image: techArtistry,
     },
-    contents: ['Computer Building', 'System Configuration', 'Hardware Optimization'],
+    contents: [
+      'Computer Building',
+      'System Configuration',
+      'Hardware Optimization',
+    ],
   },
 ];
 
@@ -167,7 +187,9 @@ const SkillSection = () => {
       </section>
       <section className="container mx-auto lg:mx-0">
         <div className="py-24 grid grid-cols-1 lg:grid-cols-2">
-          <div className="bg-[#ACBDFF] min-h-96"></div>
+          <div className="flex justify-center items-center">
+            <video autoPlay loop muted src={skillRun}></video>
+          </div>
           <div className="py-24 flex flex-col lg:ml-32 xl:ml-48">
             <h3 className="text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
               Design{' '}
