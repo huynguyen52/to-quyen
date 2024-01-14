@@ -7,6 +7,11 @@ import spline from '../assets/spline.svg';
 import draw from '../assets/draw.svg';
 import postman from '../assets/postman.svg';
 import vscode from '../assets/vscode.svg';
+import designMastery from '../assets/design-mastery.png';
+import codeWizardy from '../assets/code-wizardry.png';
+import digitalAlchemy from '../assets/digital-alchemy.png';
+import strategicTechInsights from '../assets/strategic-tech-insights.png';
+import techArtistry from '../assets/tech-artistry.png';
 import ae from '../assets/ae.svg';
 import ps from '../assets/ps.svg';
 import ai from '../assets/ai.svg';
@@ -99,16 +104,39 @@ const skills: Skill[] = [
 
 const data = [
   {
-    title: 'Design Mastery',
-    content: 'The most used programming language is JavaScript.',
+    title: {
+      text: 'Design Mastery',
+      image: designMastery,
+    },
+    contents: ['Product Design', 'UX/UI Design', 'Responsive Design', 'Cross-Platform Design', 'Pixel Precision'],
   },
   {
-    title: 'Design Mastery',
-    content: 'The most used programming language is JavaScript.',
+    title: {
+      text: 'Code Wizardry',
+      image: codeWizardy,
+    },
+    contents: ['Mobile App Development', 'Frontend Development'],
   },
   {
-    title: 'Design Mastery',
-    content: 'The most used programming language is JavaScript.',
+    title: {
+      text: 'Digital Alchemy',
+      image: digitalAlchemy,
+    },
+    contents: ['Motion Design', 'Animation', 'Multimedia Creation', 'Graphic Design'],
+  },
+  {
+    title: {
+      text: 'Strategic Tech Insights',
+      image: strategicTechInsights,
+    },
+    contents: ['Business Analysis (IT)', 'IT Strategy', 'Technology Consulting'],
+  },
+  {
+    title: {
+      text: 'Tech Artistry',
+      image: techArtistry,
+    },
+    contents: ['Computer Building', 'System Configuration', 'Hardware Optimization'],
   },
 ];
 

@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import upArrow from '../assets/up-arrow.svg';
 import downArrow from '../assets/down-arrow.svg';
+import preview from '../assets/preview.svg';
 
 type AccordionProps = {
   data: {
-    title: string;
-    content: string;
+    title: {
+      image: string;
+      text: string;
+    };
+    contents: string[];
   }[];
 };
 
@@ -30,7 +34,7 @@ const Accordion = ({ data }: AccordionProps) => {
               onChange={() => toggle(index)}
             />
             <div className="collapse-title text-lg lg:text-xl font-medium pl-0">
-              {item.title}
+              <img src={item.title.image} alt={item.title.text} />
               <img
                 src={active === index ? upArrow : downArrow}
                 alt="collapse icon"
@@ -38,8 +42,17 @@ const Accordion = ({ data }: AccordionProps) => {
               />
             </div>
             <div className="collapse-content">
-              <div className=" pl-6">
-                <p>{item.content}</p>
+              <div className="pl-6">
+                <div className='flex flex-col gap-2'>
+                  {
+                    item.contents.map((content, index) => (
+                      <div key={index} className='flex space-x-2 items-center text-[#939AFF]'>
+                        <img src={preview} alt="list icon" />
+                        <p>{content}</p>
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
             </div>
           </div>

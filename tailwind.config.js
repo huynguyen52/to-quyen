@@ -5,7 +5,22 @@ export default {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        "hero-transform-odd": {
+          "0%": { transform: "translateX(0px)" },
+          "100%": { transform: "translateX(200px)" },
+        },
+        "hero-transform-even": {
+          "0%": { transform: "translateX(0px)" },
+          "100%": { transform: "translateX(-200px)" },
+        },
+      },
+      animation: {
+        "hero-transform-odd": "hero-transform-odd 8s ease-in-out infinite alternate",
+        "hero-transform-even": "hero-transform-even 8s ease-in-out infinite alternate",
+      }
+    },
   },
   // eslint-disable-next-line no-undef
   plugins: [require('daisyui')],
