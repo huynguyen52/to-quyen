@@ -1,6 +1,15 @@
+import { useRef, useEffect } from 'react';
 import Timeline from '../components/timeline';
 
 const ExperienceSection = () => {
+  const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (container.current) {
+      container.current.scrollLeft = container.current.scrollWidth;
+    }
+  }, []);
+
   return (
     <section className="container mx-auto py-24" id="work-experiences">
       <h3 className="text-center text-3xl lg:text-5xl">
@@ -13,7 +22,7 @@ const ExperienceSection = () => {
         Embarking on professional adventures is much like navigating the
         mysterious night. 'Who in the world am I?'{' '}
       </p>
-      <div className="overflow-x-auto py-24">
+      <div ref={container} className="overflow-x-auto py-24">
         <Timeline />
       </div>
     </section>

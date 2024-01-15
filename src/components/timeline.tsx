@@ -68,13 +68,13 @@ const timelines = [
 
 const Timeline = () => {
   return (
-    <ul className="timeline timeline-snap-icon max-md:timeline-compact ">
+    <ul className="timeline timeline-snap-icon max-md:timeline-compact 3xl:justify-center">
       {timelines.map((timeline, index) => (
         <li
           key={index}
           className={`${(index === 1 || index === 2) && 'ml-[-10%]'}`}
         >
-          <hr className={`${index === 0 && 'hidden'} bg-[#939AFF]`} />
+          <hr className={`${index === 0 && 'hidden'} bg-primary`} />
           <div className="timeline-middle">
             <img src={timeline.logo} alt="Logo" className="w-14" />
           </div>
