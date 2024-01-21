@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import item1 from '../assets/item-1.png';
 import item2 from '../assets/item-2.png';
 import item3 from '../assets/item-3.png';
@@ -91,6 +92,22 @@ const images = [
 ];
 
 const ProjectSection = () => {
+  const container = useRef<null | HTMLDivElement>(null);
+  const [deg, setDeg] = useState(45);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      const top = container.current?.getBoundingClientRect().top;
+      const temp = top ? (top * 45) / window.innerHeight : 45;
+      setDeg(temp);
+    });
+    return () => {
+      window.removeEventListener('scroll', () => {});
+    };
+  }, []);
+
+  console.log(deg);
+
   return (
     <section>
       <div className="mx-auto container py-24" id="projects">
@@ -107,23 +124,33 @@ const ProjectSection = () => {
           </p>
         </div>
       </div>
-      <div className="space-y-4 w-full">
-        {images.map((image, index) => {
-          return (
-            <div
-              key={index}
-              className={`flex gap-4 ${
-                index % 2 == 0
-                  ? 'animate-hero-transform-even'
-                  : 'animate-hero-transform-odd'
-              }`}
-            >
-              {image.images.map((img, index) => {
-                return <img key={index} src={img.img} alt={img.title} />;
-              })}
-            </div>
-          );
-        })}
+      <div className="overflow-hidden">
+        <div
+          className="-rotate-0"
+          ref={container}
+          style={{
+            transform: `rotate(${deg > 0 ? -deg : 0}deg)`,
+          }}
+        >
+          <div className="space-y-4 w-full">
+            {images.map((image, index) => {
+              return (
+                <div
+                  key={index}
+                  className={`flex gap-4 ${
+                    index % 2 == 0
+                      ? 'animate-hero-transform-even'
+                      : 'animate-hero-transform-odd'
+                  }`}
+                >
+                  {image.images.map((img, index) => {
+                    return <img key={index} src={img.img} alt={img.title} />;
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

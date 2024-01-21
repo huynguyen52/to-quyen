@@ -1,4 +1,5 @@
 import arrowLeft from '../assets/arrow-left.svg';
+import Typewriter from 'typewriter-effect';
 
 const HelloSection = () => {
   return (
@@ -9,14 +10,22 @@ const HelloSection = () => {
             Hello, <br />
             I'm Harley - Quyen
             <br />
-            <span id="typed-strings">
-              <b>UX/UI Designer</b>
-              {/* <b>IT Business Analyst</b>
-                      <b>Project Manager</b>
-                      <b>Designer Quèn</b>
-                      <b>Video Maker</b> */}
-            </span>
-            <span id="typed"></span>
+            <div className="bg-gradient-to-r from-[#4242CE] to-[#939AFF] text-transparent bg-clip-text leading-tight">
+              <Typewriter
+                options={{
+                  strings: [
+                    'UX/UI Designer',
+                    'IT Business Analyst',
+                    'Project Manager',
+                    'Designer Quèn',
+                    'Video Maker',
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 55,
+                }}
+              />
+            </div>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             <button className="btn btn-sm lg:btn-md bg-white text-black hover:text-white btn-ghost rounded-3xl">

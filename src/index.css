@@ -5,3 +5,9 @@ html {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer based {
+  .Typewriter__cursor {
+    @apply font-light bg-gradient-to-r from-[#4242CE] to-[#939AFF] text-transparent bg-clip-text;
+  }
+}

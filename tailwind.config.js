@@ -2,6 +2,12 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+      },
+    },
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
     },
@@ -12,12 +18,24 @@ export default {
       },
       keyframes: {
         'hero-transform-odd': {
-          '0%': { transform: 'translateX(0px)' },
-          '100%': { transform: 'translateX(200px)' },
+          '0%': {
+            transform:
+              'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+          },
+          '100%': {
+            transform:
+              'translate3d(200px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+          },
         },
         'hero-transform-even': {
-          '0%': { transform: 'translateX(0px)' },
-          '100%': { transform: 'translateX(-200px)' },
+          '0%': {
+            transform:
+              'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+          },
+          '100%': {
+            transform:
+              'translate3d(-200px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+          },
         },
       },
       animation: {

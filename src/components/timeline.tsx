@@ -68,7 +68,7 @@ const timelines = [
 
 const Timeline = () => {
   return (
-    <ul className="timeline timeline-snap-icon max-md:timeline-compact 3xl:justify-center">
+    <ul className="timeline timeline-snap-icon max-md:timeline-compact 4xl:justify-center">
       {timelines.map((timeline, index) => (
         <li
           key={index}

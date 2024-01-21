@@ -4,7 +4,7 @@ import avatar from '../assets/avatar.svg';
 
 const ContactSection = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto mb-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-48">
         <div className="avatar justify-center lg:justify-start">
           <div className="w-80 md:w-[420px] xl:w-[512px] rounded-full">
