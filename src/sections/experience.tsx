@@ -24,7 +24,7 @@ const ExperienceSection = () => {
       </p>
       <div
         ref={container}
-        className="overflow-x-auto py-24 scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+        className="overflow-x-auto py-0 sm:py-24 scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 scrollbar-track-gray-100"
       >
         <Timeline />
       </div>

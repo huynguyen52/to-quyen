@@ -30,7 +30,7 @@ const ContactSection = () => {
             , I'd love to hear from you. Let's connect and explore the
             possibilities together!
           </p>
-          <div className="flex md:flex-row flex-col gap-6 md:gap-12 mt-6">
+          <div className="flex gap-6 md:gap-12 mt-6">
             <button className="btn bg-gradient-to-r from-[#4242CE] to-[#939AFF] btn-ghost rounded-3xl">
               GET IN TOUCH
               <img src={arrowRight} alt="Arrow Right" />

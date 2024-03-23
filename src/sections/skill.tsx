@@ -22,6 +22,7 @@ import SkillCard from '../components/skill-card';
 import { Skill } from '../types/skill';
 import Accordion from '../components/accordion';
 import skillRun from '../assets/video-mobile720.mp4';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const skills: Skill[] = [
   {
@@ -163,10 +164,12 @@ const data = [
 ];
 
 const SkillSection = () => {
+  const isDesktop = useMediaQuery('(min-width: 1280px)');
+
   return (
     <div>
       <section className="container py-[48px] mx-auto" id="my-skills">
-        <div className="flex gap-24 flex-col py-16 md:py-32 xl:py-48">
+        <div className="flex gap-24 flex-col py-8 md:py-32 xl:py-48">
           <div className="flex xl:flex-row flex-col-reverse gap-6 xl:gap-12 mx-auto justify-center">
             <p className="text-center xl:text-right">
               Proficient in turning concepts into captivating visual narratives,{' '}
@@ -184,30 +187,38 @@ const SkillSection = () => {
             <img
               src={arrow1}
               alt="arrow1"
-              className="absolute left-[-20%] top-[-20%] animate-arrow1"
+              className="w-1/4 xs:w-full absolute left-[-20%] top-0 sm:top-[-20%] animate-arrow1"
             />
             <img
               src={arrow2}
               alt="arrow2"
-              className="absolute right-[-10%] bottom-[-20%] animate-arrow2"
+              className="w-1/4 xs:w-full absolute right-[-10%] bottom-0 sm:bottom-[-20%] animate-arrow2"
             />
-            {skills.slice(0, 6).map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
-            <div className="flex flex-wrap gap-6 max-w-[1200px] mx-auto justify-center">
-              {skills.slice(6).map((skill, index) => (
+            {isDesktop ? (
+              <>
+                {skills.slice(0, 6).map((skill, index) => (
+                  <SkillCard key={index} skill={skill} />
+                ))}
+                <div className="flex flex-wrap gap-6 max-w-[1200px] mx-auto justify-center">
+                  {skills.slice(6).map((skill, index) => (
+                    <SkillCard key={index} skill={skill} />
+                  ))}
+                </div>
+              </>
+            ) : (
+              skills.map((skill, index) => (
                 <SkillCard key={index} skill={skill} />
-              ))}
-            </div>
+              ))
+            )}
           </div>
         </div>
       </section>
       <section className="container mx-auto lg:mx-0">
-        <div className="py-24 grid grid-cols-1 lg:grid-cols-2">
-          <div className="py-24">
+        <div className="py-12 sm:py-24 grid grid-cols-1 lg:grid-cols-2">
+          <div className="py-12 sm:py-24">
             <video autoPlay loop muted src={skillRun}></video>
           </div>
-          <div className="py-24 flex flex-col lg:ml-32 xl:ml-48">
+          <div className="py-0 sm:py-24 flex flex-col lg:ml-32 xl:ml-48">
             <h3 className="text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
               Design{' '}
               <span className="bg-gradient-to-r from-[#4242CE] to-[#939AFF] text-transparent bg-clip-text">

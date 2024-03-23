@@ -106,8 +106,6 @@ const ProjectSection = () => {
     };
   }, []);
 
-  console.log(deg);
-
   return (
     <section>
       <div className="mx-auto container py-24" id="projects">
@@ -144,7 +142,14 @@ const ProjectSection = () => {
                   }`}
                 >
                   {image.images.map((img, index) => {
-                    return <img key={index} src={img.img} alt={img.title} />;
+                    return (
+                      <img
+                        className={`w-1/4 xs:w-full`}
+                        key={index}
+                        src={img.img}
+                        alt={img.title}
+                      />
+                    );
                   })}
                 </div>
               );
