@@ -22,7 +22,10 @@ const ExperienceSection = () => {
         Embarking on professional adventures is much like navigating the
         mysterious night. 'Who in the world am I?'{' '}
       </p>
-      <div ref={container} className="overflow-x-auto py-24">
+      <div
+        ref={container}
+        className="overflow-x-auto py-24 scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+      >
         <Timeline />
       </div>
     </section>

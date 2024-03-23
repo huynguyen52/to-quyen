@@ -12,6 +12,8 @@ import codeWizardy from '../assets/code-wizardry.png';
 import digitalAlchemy from '../assets/digital-alchemy.png';
 import strategicTechInsights from '../assets/strategic-tech-insights.png';
 import techArtistry from '../assets/tech-artistry.png';
+import arrow1 from '../assets/arrow-1.svg';
+import arrow2 from '../assets/arrow-2.svg';
 import ae from '../assets/ae.svg';
 import ps from '../assets/ps.svg';
 import ai from '../assets/ai.svg';
@@ -178,16 +180,31 @@ const SkillSection = () => {
               </span>
             </h3>
           </div>
-          <div className="flex flex-wrap gap-6 max-w-[1200px] mx-auto justify-center">
-            {skills.map((skill, index) => (
+          <div className="flex relative flex-wrap gap-6 max-w-[1200px] mx-auto justify-center">
+            <img
+              src={arrow1}
+              alt="arrow1"
+              className="absolute left-[-20%] top-[-20%] animate-arrow1"
+            />
+            <img
+              src={arrow2}
+              alt="arrow2"
+              className="absolute right-[-10%] bottom-[-20%] animate-arrow2"
+            />
+            {skills.slice(0, 6).map((skill, index) => (
               <SkillCard key={index} skill={skill} />
             ))}
+            <div className="flex flex-wrap gap-6 max-w-[1200px] mx-auto justify-center">
+              {skills.slice(6).map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
       <section className="container mx-auto lg:mx-0">
         <div className="py-24 grid grid-cols-1 lg:grid-cols-2">
-          <div className="flex justify-center items-center">
+          <div className="py-24">
             <video autoPlay loop muted src={skillRun}></video>
           </div>
           <div className="py-24 flex flex-col lg:ml-32 xl:ml-48">

@@ -21,7 +21,7 @@ const menus = [
 
 const Drawer = () => {
   return (
-    <div className="bg-black/20 fixed w-full">
+    <div className="bg-black/20 fixed w-full z-[1000]">
       <div className="drawer container mx-auto ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">

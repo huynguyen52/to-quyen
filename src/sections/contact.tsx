@@ -13,13 +13,22 @@ const ContactSection = () => {
         </div>
         <div className="flex flex-col justify-center lg:items-start items-center">
           <h5 className="lg:text-5xl sm:text-3xl text-2xl">
-            <span>Contact</span> With Me
+            <span className="bg-gradient-to-r from-[#4242CE] to-[#939AFF] text-transparent bg-clip-text">
+              Contact
+            </span>{' '}
+            With Me
           </h5>
-          <p className="lg:text-lg text-md lg:mt-6 mt-3 text-gray-400">
+          <p className="lg:text-lg text-md lg:mt-6 mt-3 text-gray-400 lg:leading-[60px] leading-[30px]">
             I appreciate your time exploring my digital showcase. If you're
-            interested in discussing potential collaborations or viewing more
-            details about my work, portfolio, and CV, I'd love to hear from you.
-            Let's connect and explore the possibilities together!
+            interested in discussing potential collaborations or{' '}
+            <a
+              href="#"
+              className="bg-gradient-to-r from-[#4242CE] to-[#939AFF] text-transparent bg-clip-text"
+            >
+              viewing more details about my work, portfolio, and CV
+            </a>
+            , I'd love to hear from you. Let's connect and explore the
+            possibilities together!
           </p>
           <div className="flex md:flex-row flex-col gap-6 md:gap-12 mt-6">
             <button className="btn bg-gradient-to-r from-[#4242CE] to-[#939AFF] btn-ghost rounded-3xl">

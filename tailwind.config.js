@@ -37,12 +37,30 @@ export default {
               'translate3d(-200px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
           },
         },
+        arrow1: {
+          '0%': {
+            transform: 'translateX(-500px)',
+          },
+          '100%': {
+            transform: 'translateX(100vw)',
+          },
+        },
+        arrow2: {
+          '0%': {
+            transform: 'translateX(500px)',
+          },
+          '100%': {
+            transform: 'translateX(-100vw)',
+          },
+        },
       },
       animation: {
         'hero-transform-odd':
           'hero-transform-odd 8s ease-in-out infinite alternate',
         'hero-transform-even':
           'hero-transform-even 8s ease-in-out infinite alternate',
+        arrow1: 'arrow1 10s linear infinite',
+        arrow2: 'arrow2 10s linear infinite',
       },
     },
   },
