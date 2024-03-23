@@ -22,6 +22,7 @@ import SkillCard from '../components/skill-card';
 import { Skill } from '../types/skill';
 import Accordion from '../components/accordion';
 import skillRun from '../assets/video-mobile720.mp4';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const skills: Skill[] = [
   {
@@ -163,6 +164,8 @@ const data = [
 ];
 
 const SkillSection = () => {
+  const isDesktop = useMediaQuery('(min-width: 1280px)');
+
   return (
     <div>
       <section className="container py-[48px] mx-auto" id="my-skills">
@@ -191,14 +194,22 @@ const SkillSection = () => {
               alt="arrow2"
               className="absolute right-[-10%] bottom-[-20%] animate-arrow2"
             />
-            {skills.slice(0, 6).map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
-            <div className="flex flex-wrap gap-6 max-w-[1200px] mx-auto justify-center">
-              {skills.slice(6).map((skill, index) => (
+            {isDesktop ? (
+              <>
+                {skills.slice(0, 6).map((skill, index) => (
+                  <SkillCard key={index} skill={skill} />
+                ))}
+                <div className="flex flex-wrap gap-6 max-w-[1200px] mx-auto justify-center">
+                  {skills.slice(6).map((skill, index) => (
+                    <SkillCard key={index} skill={skill} />
+                  ))}
+                </div>
+              </>
+            ) : (
+              skills.map((skill, index) => (
                 <SkillCard key={index} skill={skill} />
-              ))}
-            </div>
+              ))
+            )}
           </div>
         </div>
       </section>
